@@ -67,4 +67,14 @@ function luminaReply(userText) {
     const reply = baseReplies[Math.floor(Math.random() * baseReplies.length)];
     return reply;
 }
+    if (text.includes("英語") || text.includes("English")) {
+        return "英語についてですね。必要な部分だけ、静かにお伝えしますね。";
+    }
 
+    if (text.includes("疲れ") || text.includes("しんど") || text.includes("つら")) {
+        return "お疲れさまです。無理をなさらず、ゆっくりで大丈夫ですよ。";
+    }
+
+    const reply = baseReplies[Math.floor(Math.random() * baseReplies.length)];
+    return reply;
+}
