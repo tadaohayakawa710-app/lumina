@@ -31,20 +31,7 @@ function luminaReply(userText) {
         "ありがとうございます。無理のない範囲で進めていきましょう。"
     ];
 
-    // 英語学習っぽい入力なら、少しだけ丁寧に説明
-    if (text.includes("英語") || text.includes("English")) {
-        return "英語についてですね。必要な部分だけ、静かにお伝えしますね。";
-    }
-
-    // 悲しい・しんどい系の入力なら、深掘りせず静かに寄り添う
-    if (text.includes("疲れ") || text.includes("しんど") || text.includes("つら")) {
-        return "お疲れさまです。無理をなさらず、ゆっくりで大丈夫ですよ。";
-    }
-
-    // 通常の返事（ランダム）
-    const reply = baseReplies[Math.floor(Math.random() * baseReplies.length)];
-    return reply;
-}
+    // 英語学習っぽい入力なら、少しだけ丁寧に説明する
 
     if (text.includes("英語") || text.includes("English")) {
         return "英語についてですね。必要な部分だけ、静かにお伝えしますね。";
