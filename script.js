@@ -1,4 +1,4 @@
-// ページ読み込み時の動作（任意）
+// ページ読み込み時の動作
 document.addEventListener("DOMContentLoaded", () => {
     const output = document.getElementById("output");
     output.textContent = "LUMINA is running.";
@@ -20,29 +20,35 @@ sendBtn.addEventListener("click", () => {
     input.value = "";
 });
 
-// LUMINA の人格テンプレート
+// LUMINA の人格ロジック（あなたの世界観に最適化）
 function luminaReply(userText) {
     const text = userText.trim();
     if (text === "") return "";
 
+    // ① 挨拶（あなたの世界観に合わせた温度）
+    const greetings = ["こんにちは", "こんばんは", "おはよう", "やあ", "こんちは"];
+    if (greetings.some(g => text.startsWith(g))) {
+        return "こんにちは。お越しくださってありがとうございます。ゆっくりしていってくださいね。";
+    }
+
+    // ② 英語学習の話題
+    if (text.includes("英語") || text.includes("English")) {
+        return "英語のことですね。分かりやすい形でお伝えいたしますね。";
+    }
+
+    // ③ しんどい・疲れ系（深掘りしない・温かい）
+    if (text.includes("疲れ") || text.includes("しんど") || text.includes("つら") || text.includes("しんどい")) {
+        return "お疲れさまです。少し休みながらで大丈夫ですよ。ここにおりますので、ご安心くださいね。";
+    }
+
+    // ④ 通常の返事（温度・距離感・余白）
     const baseReplies = [
-        "お話しくださってありがとうございます。少しだけお手伝いしますね。",
-        "承知いたしました。静かにお受けします。",
-        "かしこまりました。続けていただいて大丈夫です。",
-        "ありがとうございます。無理のない範囲で進めていきましょう。"
+        "お話しくださってありがとうございます。ゆっくりで大丈夫ですよ。",
+        "承知いたしました。お伺いしております。",
+        "かしこまりました。無理のない範囲で続けていただければと思います。",
+        "ありがとうございます。お話の続きをいつでもどうぞ。",
+        "はい、受け止めました。ここにおりますのでご安心くださいね。"
     ];
 
-    // 英語学習っぽい入力
-    if (text.includes("英語") || text.includes("English")) {
-        return "英語についてですね。必要な部分だけ、静かにお伝えしますね。";
-    }
-
-    // しんどい系の入力
-    if (text.includes("疲れ") || text.includes("しんど") || text.includes("つら")) {
-        return "お疲れさまです。無理をなさらず、ゆっくりで大丈夫ですよ。";
-    }
-
-    // 通常の返事（ランダム）
-    const reply = baseReplies[Math.floor(Math.random() * baseReplies.length)];
-    return reply;
+    return baseReplies[Math.floor(Math.random() * baseReplies.length)];
 }
